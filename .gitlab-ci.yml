@@ -8,5 +8,4 @@ deploy:
   stage: deploy
   only:
     - master
-  script: git-push git@github.com:bskrtich/mac-setup.git
-
+  script: git-push git@github.com:bskrtich/dotfiles.git

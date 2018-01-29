@@ -14,8 +14,13 @@ red() { printf "\e[1;31m%b\e[0m\n" "$@"; }
 # Install Homebrew
 #  Package manager for macOS
 # https://brew.sh/
-green "Installing Homebrew"
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+green "Installing/Updating Homebrew"
+which -s brew
+if [[ $? != 0 ]] ; then
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+else
+    brew update
+fi
 
 # Install Homebrew-Cask
 #  Homebrew-Cask extends Homebrew allows installation
@@ -36,4 +41,4 @@ green "Installing Critical Applications"
 brew cask install chrome
 brew cask install dropbox
 
-yellow "Please sign in to Chrome, Last Pass and Dropbox"
+yellow "Please sign in to Chrome, Last Pass and Dropbox before preceding"
