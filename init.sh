@@ -27,9 +27,6 @@ fi
 green "Installing git"
 brew install git
 
-green "Setting up repos folder"
-mkdir -p ~/repos
-
 green "Cloning mac-setup repo"
 mkdir -p ~/.dotfiles
 cd ~/.dotfiles
@@ -42,6 +39,10 @@ else
 fi
 # Set the origin to the ssh version so we can commit back to the repo
 git remote set-url origin git@gitlab.com:bskrtich/dotfiles.git
+
+# Setup the repos folder
+green "Setting up repos folder"
+mkdir -p ~/repos
 
 # Symlink dotfile to ~/repos folder
 ln -s ~/.dotfiles ~/repos/dotfiles

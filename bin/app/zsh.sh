@@ -1,6 +1,9 @@
 #!/bin/bash
 set -euo pipefail
 
+# Change to script dir
+cd "${0%/*}"
+
 # Colorize me baby
 green() { printf "\e[1;32m%b\e[0m\n" "$@"; }
 yellow() { printf "\e[1;33m%b\e[0m\n" "$@"; }
@@ -17,10 +20,6 @@ brew install zsh zsh-completions
 # it is set in iterm2 prefrences
 #chsh -s $(which zsh)
 
-To activate these completions, add the following to your .zshrc:
-
-  fpath=(/usr/local/share/zsh-completions $fpath)
-
-You may also need to force rebuild `zcompdump`:
-
-  rm -f ~/.zcompdump; compinit
+green "Symlink zshrc"
+rm -R ~/.zshrc
+ln -s ../../app/zsh/zshrc ~/.zshrc

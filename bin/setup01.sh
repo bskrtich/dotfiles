@@ -1,15 +1,18 @@
 #!/bin/bash
 set -euo pipefail
 
-####
-## Part 01
-## Install needed applications for use in later parts
-####
+# Change to script dir
+cd "${0%/*}"
 
 # Colorize me baby
 green() { printf "\e[1;32m%b\e[0m\n" "$@"; }
 yellow() { printf "\e[1;33m%b\e[0m\n" "$@"; }
 red() { printf "\e[1;31m%b\e[0m\n" "$@"; }
+
+####
+## Part 01
+## Install needed applications for use in later parts
+####
 
 # Install Homebrew
 #  Package manager for macOS
