@@ -6,6 +6,7 @@
     fontFamily: "Source Code Pro"
     showIndentGuide: true
     showInvisibles: true
+    tabLength: 4
     tabType: "soft"
   "exception-reporting":
     userId: "5c93014e-3ddd-41d7-8fd4-99b536f4185b"

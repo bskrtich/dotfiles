@@ -17,8 +17,7 @@ echo ""
 #  Package manager for macOS
 # https://brew.sh/
 green "Installing/Updating Homebrew"
-which -s brew
-if [[ $? != 0 ]] ; then
+if [[ $(command -v brew) == "" ]]; then
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 else
     brew update

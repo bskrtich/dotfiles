@@ -7,16 +7,16 @@ cd "${0%/*}"
 source ../_common.sh
 
 ####
-## Atom
-## Setup git
+## SSH
+## Setup ssh
 ####
 
 green "Setup git config"
-mkdir -p ~/.git
+mkdir -p ~/.ssh
 
 # Move to app dir so PWD will give the correct folder
 cd ../../app/git
 
-green "Symlink config.cson"
-rm -f ~/.gitconfig
-ln -s `pwd`/gitconfig ~/.gitconfig
+green "Symlink ssh folder"
+rm -f ~/ssh
+ln -s ~/.ssh ~/ssh

@@ -4,10 +4,7 @@ set -euo pipefail
 # Change to script dir
 cd "${0%/*}"
 
-# Colorize me baby
-green() { printf "\e[1;32m%b\e[0m\n" "$@"; }
-yellow() { printf "\e[1;33m%b\e[0m\n" "$@"; }
-red() { printf "\e[1;31m%b\e[0m\n" "$@"; }
+source ../_common.sh
 
 ####
 ## Iterm2
@@ -18,7 +15,9 @@ red() { printf "\e[1;31m%b\e[0m\n" "$@"; }
 brew cask install iterm2
 
 # Specify the preferences directory
-defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/.dotfiles/iterm2"
+green "Setting preferences path"
+defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/.dotfiles/app/iterm2"
 
 # Tell iTerm2 to use the custom preferences in the directory
+green "Setting use custom preferences path"
 defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true

@@ -4,10 +4,7 @@ set -euo pipefail
 # Change to script dir
 cd "${0%/*}"
 
-# Colorize me baby
-green() { printf "\e[1;32m%b\e[0m\n" "$@"; }
-yellow() { printf "\e[1;33m%b\e[0m\n" "$@"; }
-red() { printf "\e[1;31m%b\e[0m\n" "$@"; }
+source _common.sh
 
 ####
 ## Part 01
@@ -18,8 +15,7 @@ red() { printf "\e[1;31m%b\e[0m\n" "$@"; }
 #  Package manager for macOS
 # https://brew.sh/
 green "Installing/Updating Homebrew"
-which -s brew
-if [[ $? != 0 ]] ; then
+if [[ $(command -v brew) == "" ]]; then
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 else
     brew update

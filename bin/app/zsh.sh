@@ -4,22 +4,24 @@ set -euo pipefail
 # Change to script dir
 cd "${0%/*}"
 
-# Colorize me baby
-green() { printf "\e[1;32m%b\e[0m\n" "$@"; }
-yellow() { printf "\e[1;33m%b\e[0m\n" "$@"; }
-red() { printf "\e[1;31m%b\e[0m\n" "$@"; }
+source ../_common.sh
 
 ####
 ## ZSH
 ## Install and setup ZSH
 ####
 
-brew install zsh zsh-completions
+green "Installing zsh"
+brew install zsh
+brew install zsh-completions
 
-# I am not sure that I need to change my default shell since
-# it is set in iterm2 prefrences
-#chsh -s $(which zsh)
+# Change default shell
+chsh -s /bin/zsh
+
+# Install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 green "Symlink zshrc"
-rm -R ~/.zshrc
-ln -s ../../app/zsh/zshrc ~/.zshrc
+cd ../../app/zsh/
+rm -f ~/.zshrc
+ln -s `pwd`/zshrc ~/.zshrc
