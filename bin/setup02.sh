@@ -22,6 +22,7 @@ brew install ack
 brew install bash
 brew install dnsmasq
 brew install watch
+brew install shellcheck
 
 # Install Homebrew-Cask apps
 green "Install Homebrew Cask apps"
