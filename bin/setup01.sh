@@ -38,6 +38,5 @@ mas signin --dialog bskrtich@gmail.com
 # Install Critical Applications
 green "Installing Critical Applications"
 brew cask install chrome
-brew cask install dropbox
 
-yellow "Please sign in to Chrome, Last Pass and Dropbox before preceding"
+yellow "Please sign in to Chrome and Last Pass"

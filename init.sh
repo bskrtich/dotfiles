@@ -6,9 +6,9 @@ set -euo pipefail
 ####
 
 # Colorize me baby
-green() { printf "\e[1;32m%b\e[0m\n" "$@"; }
-yellow() { printf "\e[1;33m%b\e[0m\n" "$@"; }
-red() { printf "\e[1;31m%b\e[0m\n" "$@"; }
+green() { printf '\e[1;32m%b\e[0m\n' "$@"; }
+yellow() { printf '\e[1;33m%b\e[0m\n' "$@"; }
+red() { printf '\e[1;31m%b\e[0m\n' "$@"; }
 
 green "Running Initial setup for a mac..."
 echo ""
